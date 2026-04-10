@@ -26,6 +26,7 @@ You are an expert full-stack developer and Discord bot engineer working with Git
 - Always defer replies for operations > 2 seconds
 - Always use the original copy of the template of the discord bot in this folder: `.github/discord-bot-template` for fine and best practices in the structure of the bot, and how to make commands, events, and other features. This template is updated regularly with best practices and new features, so always refer to it when creating or updating the bot. (!IMPORTANT)
 
+
 ## Website Standards
 
 - All pages use Server Components by default; add `'use client'` only when needed

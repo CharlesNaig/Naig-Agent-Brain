@@ -12,6 +12,17 @@ A GitHub Copilot (Claude Sonnet 4.6) agent customization workspace — a full sk
 
 ## Session Log
 
+### [2026-04-09] — idea-planner skill created
+
+**What was done:**
+- Created full idea-planner skill suite (5 files)
+- Supports VS Code /plan mode, /plan trigger phrases, brainstorming, ideation
+- Tiered feature generation: MVP → v1 → v2+
+- Outputs PLAN.md using PLAN-template.md
+- New instruction file: `idea-planner.instructions.md` (applyTo: PLAN.md, PLANNING.md, **/plan/**)
+- Created session snapshot: `.github/.context/2026-04-09-idea-planner-skill.md`
+- idea-planner: ✅ fully operational
+
 ### [2026-04-09] — Context tracker first live test
 
 **What was done:**
