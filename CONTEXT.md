@@ -12,6 +12,21 @@ A GitHub Copilot (Claude Sonnet 4.6) agent customization workspace — a full sk
 
 ## Session Log
 
+### [2026-04-10] — UltraPlan agent created (replaces /plan)
+
+**What was done:**
+- Created `ultraplan.agent.md` at user prompts folder — deep-thinking planner with 3-pass reasoning, clarifying questions, trade-off analysis, phased roadmaps
+- Created `plan.prompt.md` at user prompts folder — shadows built-in `/plan`, redirects to ultraplan agent
+- Created `ultraplan.prompt.md` at user prompts folder — adds `/ultraplan` as alias
+- All files scoped to `C:\Users\Charles\AppData\Roaming\Code\User\prompts\` (cross-workspace, survives extension updates)
+
+**Files changed:**
+- `C:\Users\Charles\AppData\Roaming\Code\User\prompts\ultraplan.agent.md` (created)
+- `C:\Users\Charles\AppData\Roaming\Code\User\prompts\plan.prompt.md` (created)
+- `C:\Users\Charles\AppData\Roaming\Code\User\prompts\ultraplan.prompt.md` (created)
+
+---
+
 ### [2026-04-09] — idea-planner skill created
 
 **What was done:**
