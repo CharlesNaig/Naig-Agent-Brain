@@ -1,7 +1,7 @@
 ---
 name: obsidian-brain
-description: "Mandatory long-term memory skill. Use after every file-changing session to create an Obsidian Brain entry and update the matching Project Index.md."
-argument-hint: "No argument needed. Runs after local context is updated."
+description: "Mandatory long-term memory skill. Use before and after every file-changing session to read Obsidian Brain context, create a new brain entry, and update the matching Project Index.md."
+argument-hint: "No argument needed. Runs before planning and after local context is updated."
 ---
 
 # Obsidian Brain Skill
@@ -16,7 +16,21 @@ Vault path:
 C:\Users\Charles\Documents\Obsidian Vault\My Brain
 ```
 
-## Required Behavior
+## Brain-First Requirement
+
+Before file-changing work, read `/agent-system/base/BRAIN-FIRST-WORKFLOW.md`.
+
+The short version:
+
+1. Read local `CONTEXT.md`.
+2. Read latest relevant `.context/` snapshots.
+3. Read the matching Obsidian `Project Index.md`.
+4. Read the latest 3 to 5 files from that project's `Brain Changes/` folder.
+5. Use that memory before planning or editing.
+
+If the Obsidian vault is unavailable, continue with local context and create a pending brain entry after the task.
+
+## Required Behavior After File Changes
 
 After a file-changing session:
 
