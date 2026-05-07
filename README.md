@@ -1,4 +1,4 @@
-# Vscode Naig Skills
+# Naig Agent Brain
 
 This repository is a universal, LLM-agnostic coding agent skill system. It started as a GitHub Copilot instruction suite and now exposes one neutral base system that can be read by Codex, Claude Code, GitHub Copilot, Ollama/local models, OpenCode, and future coding agents.
 
@@ -14,6 +14,72 @@ Core files:
 - `agent-system/skills/` - reusable domain skills
 - `agent-system/adapters/` - agent-specific compatibility prompts
 - `agent-system/templates/` - context and Obsidian entry templates
+- `scripts/` - installers for copying Naig Agent Brain into new projects
+
+## Install Into A New Project
+
+Use the installer when starting a new project so the project immediately gets the universal agent rules, adapters, skills, local context files, and Obsidian Brain registration.
+
+PowerShell:
+
+```powershell
+.\scripts\install-agent-brain.ps1 -TargetPath "C:\Users\Charles\Desktop\Projects\Tambayan-Bot"
+```
+
+Command Prompt / double-click friendly wrapper:
+
+```bat
+scripts\install-agent-brain.bat "C:\Users\Charles\Desktop\Projects\Tambayan-Bot"
+```
+
+Optional examples:
+
+```powershell
+.\scripts\install-agent-brain.ps1 -TargetPath "C:\Projects\portfolio-v2" -ProjectType website -ProjectName "My Portfolio"
+```
+
+```powershell
+.\scripts\install-agent-brain.ps1 -TargetPath "C:\Projects\filipino-bot" -ProjectType discord-bot -NonInteractive -Force
+```
+
+The installer copies or creates:
+
+- `AGENTS.md`
+- `CLAUDE.md`
+- `agent-system/`
+- `.github/copilot-instructions.md`
+- `CONTEXT.md` if missing
+- `.context/` if missing
+- `.context/YYYY-MM-DD-HHMM-installed-naig-agent-brain.md`
+- Obsidian Brain entry and `Project Index.md` when the vault path exists
+- `.context/obsidian-brain-pending/` fallback when the vault path is unavailable
+
+By default, the installer uses this Obsidian vault path:
+
+```txt
+C:\Users\Charles\Documents\Obsidian Vault\My Brain
+```
+
+The installer auto-detects common project names:
+
+- `Tambayan` -> `Discord Bots\Tambayan`
+- `Pinoy` -> `Discord Bots\Pinoy Lang`
+- `Filipino` -> `Discord Bots\Filipino`
+- `Hiraya` -> `Discord Bots\Hiraya`
+- `portfolio` -> `Website\My Portfolio`
+- uncertain/general projects -> `_Inbox`
+
+You can accept the detected Obsidian folder by pressing Enter, or type a custom relative folder such as:
+
+```txt
+Discord Bots\Tambayan
+```
+
+After installation, open the target project and start your coding agent with:
+
+```txt
+Read AGENTS.md and CONTEXT.md first. Then continue from the current project state.
+```
 
 ## Supported Agents
 
