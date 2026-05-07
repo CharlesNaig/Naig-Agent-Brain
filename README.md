@@ -16,6 +16,36 @@ Core files:
 - `agent-system/templates/` - context and Obsidian entry templates
 - `scripts/` - installers for copying Naig Agent Brain into new projects
 
+## Brain-First Memory Loop
+
+Naig Agent Brain is designed as a read-before-write memory system.
+
+Before file-changing work, agents should read:
+
+1. `CONTEXT.md`
+2. Latest relevant `.context/` snapshots
+3. Matching Obsidian Brain `Project Index.md`
+4. Latest 3 to 5 markdown files from the matching Obsidian `Brain Changes/` folder
+
+After file-changing work, agents must update:
+
+1. `CONTEXT.md`
+2. `.context/YYYY-MM-DD-HHMM-short-session-title.md`
+3. A new Obsidian Brain change entry
+4. The matching Obsidian `Project Index.md`
+
+The dedicated protocol lives at:
+
+```txt
+agent-system/base/BRAIN-FIRST-WORKFLOW.md
+```
+
+If Obsidian is unavailable, agents continue with local context and create a fallback entry in:
+
+```txt
+.context/obsidian-brain-pending/
+```
+
 ## Install Into A New Project
 
 Use the installer when starting a new project so the project immediately gets the universal agent rules, adapters, skills, local context files, and Obsidian Brain registration.
@@ -78,7 +108,7 @@ Discord Bots\Tambayan
 After installation, open the target project and start your coding agent with:
 
 ```txt
-Read AGENTS.md and CONTEXT.md first. Then continue from the current project state.
+Read AGENTS.md, CONTEXT.md, the matching Obsidian Project Index.md, and the latest Brain Changes first. Then continue from the current project state.
 ```
 
 ## Supported Agents
@@ -129,7 +159,7 @@ The global long-term brain path is:
 C:\Users\Charles\Documents\Obsidian Vault\My Brain
 ```
 
-After file changes, agents must create one brain entry and update the matching `Project Index.md`. If the correct project folder cannot be inferred, use:
+Before work, agents should read the matching Obsidian `Project Index.md` and latest `Brain Changes/` notes when available. After file changes, agents must create one brain entry and update the matching `Project Index.md`. If the correct project folder cannot be inferred, use:
 
 ```txt
 C:\Users\Charles\Documents\Obsidian Vault\My Brain\_Inbox\Brain Changes
